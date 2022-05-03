@@ -123,7 +123,8 @@ button:focus {
   padding: 4em 0;
 }
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   margin: 2em;
   max-width: 100%;
   align-items: center;
@@ -159,11 +160,22 @@ button:focus {
   border: 2px solid #f1cdb3;
   padding: auto;
   border-radius: 50%;
-  height: 3.5em;
-  width: 3.5em;
+  height: 2.5rem;
+  width: 2.5rem;
   background-color: var(--clr-light-s);
+  font-size: 1.2rem;
+  margin: auto 0.5em;
+}
+.pagination-btn {
+  display: flex;
+}
+.arrow:nth-child(3) {
+  background-color: var(--clr-primary);
 }
 
+.arrow:nth-child(3):hover,
+.arrow:nth-child(3):active,
+.arrow:nth-child(3):focus,
 .section--help-card:hover,
 .section--help-card:focus,
 .section--help-card:active,
@@ -177,7 +189,12 @@ button:focus {
   transform: scale(1.05);
   transition: ease-in-out;
 }
-
+button:disabled,
+button[disabled] {
+  border: 1px solid var(--clor-dark-m);
+  background-color: var(--clr-dark);
+  color: var(--clr-dark-l);
+}
 /* footer */
 .footer {
   display: grid;
