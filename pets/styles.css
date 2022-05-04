@@ -103,6 +103,7 @@ button > a {
   color: var(--clr-black);
   font-family: Georgia, serif;
 }
+.card:hover button,
 button:hover,
 button:active,
 button:focus {
@@ -190,9 +191,11 @@ button:focus {
   transition: ease-in-out;
 }
 button:disabled,
-button[disabled] {
+a:disabled {
+  cursor: default;
+  text-decoration: none;
   border: 1px solid var(--clor-dark-m);
-  background-color: var(--clr-dark);
+  background-color: var(--clr-light-l);
   color: var(--clr-dark-l);
 }
 /* footer */
