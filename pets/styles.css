@@ -191,7 +191,7 @@ button:focus {
   transition: ease-in-out;
 }
 button:disabled,
-a:disabled {
+.disabled {
   cursor: default;
   text-decoration: none;
   border: 1px solid var(--clor-dark-m);
