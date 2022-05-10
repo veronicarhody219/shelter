@@ -82,13 +82,15 @@ a {
   text-decoration: none;
   color: var(--clr-dark-xl);
 }
-.nav li:first-child a {
+.nav li:nth-child(2) a {
   text-decoration: underline var(--clr-primary) 2px;
 }
 a:hover {
   text-decoration: underline var(--clr-primary) 2px;
 }
-
+.header--logo-link:hover {
+  text-decoration: none;
+}
 .section--btn-clr {
   background: var(--clr-primary);
   border-radius: 100px;
@@ -174,9 +176,7 @@ button:focus {
   background-color: var(--clr-primary);
 }
 
-.arrow:nth-child(3):hover,
-.arrow:nth-child(3):active,
-.arrow:nth-child(3):focus,
+/* hover */
 .section--help-card:hover,
 .section--help-card:focus,
 .section--help-card:active,
@@ -191,10 +191,10 @@ button:focus {
   transition: ease-in-out;
 }
 button:disabled,
-.disabled {
+.disabled:hover {
   cursor: default;
   text-decoration: none;
-  border: 1px solid var(--clor-dark-m);
+  border: 1px solid var(--clr-dark);
   background-color: var(--clr-light-l);
   color: var(--clr-dark-l);
 }
