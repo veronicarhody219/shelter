@@ -293,14 +293,13 @@ button:focus {
   right: 1rem;
 }
 @media screen and (max-width: 1280px) {
-  .card:nth-child(2) {
-    display: none;
+  .cards {
+    grid-template-areas: "one two";
   }
 }
 @media screen and (max-width: 768px) {
-  .card:nth-child(2),
-  .card:nth-child(3) {
-    display: none;
+  .cards {
+    grid-template-areas: "one";
   }
 }
 /* help */
