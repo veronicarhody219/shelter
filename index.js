@@ -5,11 +5,10 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.classList.toggle("active");
 });
 const modal = document.querySelector(".modal");
-const cards = document.querySelectorAll(".card");
-cards.map((item) => {
-  item.addEventListener("click", () => {
-    modal.showModal();
-  });
+const openModal = document.querySelector(".open-modal");
+const closeModal = document.querySelector(".close-modal");
+openModal.addEventListener("click", () => {
+  modal.showModal();
 });
 
 async function getData() {

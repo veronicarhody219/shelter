@@ -444,39 +444,65 @@ button:focus {
 
   align-items: center;
   justify-content: center;
-  background-color: pink;
+
   flex: 1;
   gap: 1em;
   border: none;
   color: var(--clr-dark-l);
   max-width: 80%;
   margin: auto;
-  padding: 2em 1em;
-  width: calc(900em / 16);
-  height: 500px;
+  padding: 0.625em;
+  width: 56.25em;
+  height: 31.25em;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .modal-desc {
-  flex: 50%;
+  max-width: 50%;
+  flex: 1;
+}
+.modal-desc > * {
+  padding: 0.3125em;
+}
+.modal-desc h3 {
+  font-size: 2.1875rem;
+}
+.modal-desc h4 {
+  font-size: 1.25rem;
 }
 .close-modal {
   position: absolute;
-  top: -2em;
-  right: 0;
+  top: -45px;
+  right: -45px;
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 50px;
+  border-radius: 100px;
+  border: 2px solid var(--clr-primary);
+  width: 52px;
+  height: 52px;
 }
 @media screen and (max-width: 1280px) {
   .modal {
-    width: 630px;
-    height: 350px;
+    width: 39.375em;
+    height: 21.875em;
+  }
+  .modal-desc {
+    max-width: 90%;
   }
 }
 @media screen and (max-width: 768px) {
   .modal {
-    width: 240px;
-    height: 341px;
+    width: 15em;
+    height: 21.3125em;
     max-width: 70%;
   }
   .modal--img {
     display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .modal {
+    width: 13.75em;
+    height: 20.0625em;
   }
 }
