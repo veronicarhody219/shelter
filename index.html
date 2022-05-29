@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="./normalize.css" /> -->
-    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="stylesheet" href="../styles.css" />
 
     <title>Shelter</title>
   </head>
@@ -16,6 +17,11 @@
         <h1>Cozy House</h1>
         <p>Shelter for pets in Boston</p>
       </div>
+      <a href="#" class="toggle-btn">
+        <span class="burger"></span>
+        <span class="burger"></span>
+        <span class="burger"></span>
+      </a>
       <nav class="nav">
         <ul>
           <li><a href="#">About the shelter</a></li>
@@ -30,7 +36,10 @@
       <!-- main--not-only-block -->
       <section class="section--not-only-block">
         <div class="section--not-only-block-desc">
-          <h2>Not only people need a house</h2>
+          <h2>
+            Not only people <br />
+            need a house
+          </h2>
           <p class="section--not-only-block-text">
             We offer to give a chance to a little and nice pupply with an
             extremely wide and open heart. He or she will love you more than
@@ -40,22 +49,18 @@
             <a href="#friends">Make a friend</a>
           </button>
         </div>
-        <img
-          src="./assets/start-screen-puppy.svg"
-          alt=""
-          class="section--not-only-block-img"
-        />
+        <div class="section--not-only-block-img">
+          <img src="./assets/start-screen-puppy.svg" alt="Puppy" />
+        </div>
       </section>
       <!-- end of main--not-only block -->
       <!-- About block -->
       <section class="section--about">
-        <img
-          src="./assets/about-pets.svg"
-          alt="dogs and cats"
-          class="section--about-img"
-        />
+        <div class="section--about-img">
+          <img src="./assets/about-pets.svg" alt="dogs and cats" />
+        </div>
         <div class="section--about-desc">
-          <h2>About the shelter “Cozy House”</h2>
+          <h2>About the shelter <br />“Cozy House”</h2>
           <p class="section--about-text1">
             Currently we have 121 dogs and 342 cats on our hands and statistics
             show that only 20% of them will find a family. The others will
@@ -80,17 +85,7 @@
           <div class="">
             <button class="arrow">&#8592;</button>
           </div>
-
-          <div class="card">
-            <img
-              src="./assets/pets-katrine.svg"
-              alt="Katrine"
-              class="card--img"
-            />
-            <h3>Katrine</h3>
-            <button class="card--btn-light">Learn more</button>
-          </div>
-          <div class="card">
+          <div class="card card-2">
             <img
               src="./assets/pets-jennifer.svg"
               alt="Jennifer"
@@ -99,7 +94,38 @@
             <h3>Jennifer</h3>
             <button class="card--btn-light">Learn more</button>
           </div>
-          <div class="card">
+          <div class="card card-1">
+            <img
+              src="./assets/pets-katrine.svg"
+              alt="Katrine"
+              class="card--img"
+            />
+            <h3>Katrine</h3>
+            <button class="card--btn-light">Learn more</button>
+            <dialog open class="modal">
+              <div class="modal--img">
+                <img src="./assets/pets-katrine.svg" alt="" />
+              </div>
+              <div class="modal-desc">
+                <h3>Katrine</h3>
+                <h4>Cat - British Shorthair</h4>
+                <p>
+                  Katrine is a beautiful girl. She is as soft as the finest
+                  velvet with a thick lush fur. Will love you until the last
+                  breath she takes as long as you are the one. She is picky
+                  about her affection. She loves cuddles and to stretch into
+                  your hands for a deeper relaxations.
+                </p>
+                <p><strong>Age: </strong> 2 months</p>
+                <p><strong>Inoculations: </strong>none</p>
+                <p><strong>Diseases: </strong> none</p>
+                <p><strong>Parasites: </strong> none</p>
+              </div>
+              <div class="close-modal">&#10006;</div>
+            </dialog>
+          </div>
+
+          <div class="card card-3">
             <img src="./assets/pets-woody.svg" alt="Woody" class="card--img" />
             <h3>Woody</h3>
             <button class="card--btn-light">Learn more</button>
@@ -194,11 +220,9 @@
       <!-- end of help block -->
       <!-- in addition block -->
       <section class="section--in-addition">
-        <img
-          src="./assets/donation-dog.svg"
-          alt="donation dog"
-          class="section--in-addition-img"
-        />
+        <div class="section--in-addition-img">
+          <img src="./assets/donation-dog.svg" alt="donation dog" />
+        </div>
         <div class="section--in-addition-desc">
           <h2>You can also make a donation</h2>
           <p class="section--in-addition-text">
@@ -245,13 +269,12 @@
             ><img src="./assets/london.svg" alt="London"
           /></a>
         </div>
-        <img
-          src="./assets/footer-puppy.svg"
-          alt="footer puppy"
-          class="footer--img"
-        />
+        <div class="footer--img">
+          <img src="./assets/footer-puppy.svg" alt="footer puppy" />
+        </div>
       </footer>
       <!-- end of footer -->
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>
