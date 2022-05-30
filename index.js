@@ -23,8 +23,9 @@ async function getData() {
             />
             <h3>${item.name}</h3>
             <button class="card--btn-light open-modal">Learn more</button>
+            </div>
             <div class="modal">
-             
+            <div class="modal-content">
                 <div class="modal--img">
                   <img src="${item.image}" alt="${item.name}" />
                 </div>
@@ -41,8 +42,9 @@ async function getData() {
                   <div class="close-modal">✕</div>
                
               </div>
+              </div>
             </div>
-          </div>
+         
     `;
     cards.innerHTML += cardContent;
 
