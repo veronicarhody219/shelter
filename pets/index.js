@@ -70,37 +70,6 @@ async function getData() {
         };
       }
     });
-
-    // slides
-    let slideIndex = 1;
-    // console.log(showSlides(slideIndex));
-
-    // showSlides(slideIndex + 1);
-    // showSlides(slideIndex + 2);
-    // showSlides(slideIndex + 3);
-    const next = document.querySelector(".next");
-    const prev = document.querySelector(".prev");
-    next.addEventListener("click", slideMove(1));
-    prev.addEventListener("click", slideMove(-1));
-    function slideMove(n) {
-      showSlides((slideIndex += n));
-    }
-    slideMove(1)
-    slideMove(-1)
-    function showSlides(n) {
-      let slides = modalContainer.getElementsByClassName("slide");
-      console.log(slides);
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (let i = 0; i < slides.length; i += 3) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
-    }
   });
 }
 getData();
