@@ -489,7 +489,7 @@ button:focus {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
@@ -499,6 +499,7 @@ button:focus {
 }
 .modal-content {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   gap: 1em;
@@ -513,7 +514,7 @@ button:focus {
 
 .modal-desc {
   max-width: 50%;
-  /* flex: 1; */
+  flex: 1;
 }
 .modal-desc > * {
   padding: 0.3125em;
@@ -538,7 +539,7 @@ button:focus {
   height: 52px;
 }
 
-/* @media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .modal-content {
     width: 39.375rem;
     height: 21.875rem;
@@ -550,8 +551,8 @@ button:focus {
 @media screen and (max-width: 768px) {
   .modal-content {
     width: 15rem;
-    height: 21.3125rem;
-    max-width: 70%;
+    height: 26.3125rem;
+    /* max-width: 70%; */
   }
   .modal--img {
     display: none;
@@ -560,6 +561,6 @@ button:focus {
 @media screen and (max-width: 320px) {
   .modal-content{
     width: 13.75rem;
-    height: 20.0625rem;
+    height: 28.0625rem;
   }
-} */
+}

@@ -39,9 +39,8 @@ async function getData() {
                   <p><strong>Inoculations: </strong>none</p>
                   <p><strong>Diseases: </strong> none</p>
                   <p><strong>Parasites: </strong> none</p>
+                  </div>
                   <div class="close-modal">✕</div>
-               
-              </div>
               </div>
             </div>
          
