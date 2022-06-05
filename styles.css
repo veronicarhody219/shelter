@@ -293,9 +293,9 @@ button:focus {
   right: 0rem;
 }
 
-.slide{
+/* .slide{
   display: none;
-}
+} */
 @media screen and (max-width: 1280px) {
   .cards {
     grid-template-areas: "one two";
@@ -500,6 +500,9 @@ button:focus {
   width: 100%;
   height: 100%;
   overflow: auto;
+}
+.modal.active{
+  display: flex;
 }
 .modal-content {
   display: flex;
