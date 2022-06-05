@@ -42,16 +42,22 @@ getData();
 
 next.addEventListener("click", () => {
   cards.innerHTML = "";
-  pet = pet.map((item) => {
-    return (item = Math.floor(Math.random() * 7));
-  });
+
+  for (let i = 0; i < pet.length; i++) {
+    let r = Math.floor(Math.random() * 7) + 1;
+    if (pet.indexOf(r) === -1 && pet[i] !== r) pet[i] = r;
+  }
+  console.log(pet);
   getData();
 });
 prev.addEventListener("click", () => {
   cards.innerHTML = "";
-  pet = pet.map((item) => {
-    return (item = Math.floor(Math.random() * 7));
-  });
+
+  for (let i = 0; i < pet.length; i++) {
+    let r = Math.floor(Math.random() * 7) + 1;
+    if (pet.indexOf(r) === -1 && r != pet[i]) pet[i] = r;
+  }
+  console.log(pet);
   getData();
 });
 
