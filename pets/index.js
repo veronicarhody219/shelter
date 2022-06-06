@@ -48,7 +48,6 @@ arrowFirst.addEventListener("click", () => {
   changeStyle();
 });
 arrowLast.addEventListener("click", () => {
-  changeStyle();
   if (id == idLast) {
     return;
   } else {
@@ -57,22 +56,23 @@ arrowLast.addEventListener("click", () => {
     cards.innerHTML = "";
     getData(randomArray());
   }
+  changeStyle();
 });
 
 arrowPrev.addEventListener("click", () => {
-  changeStyle();
   if (id === idFirst) {
     return;
   }
   prevBtn();
+  changeStyle();
 });
 
 arrowNext.addEventListener("click", () => {
-  changeStyle();
   if (id === idLast) {
     return;
   }
   nextBtn();
+  changeStyle();
 });
 
 function prevBtn() {
