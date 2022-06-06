@@ -5,24 +5,102 @@ toggleBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
   toggleBtn.classList.toggle("active");
 });
+
+// arrows
+const arrowFirst = document.querySelector(".arrow-first");
+const arrowLast = document.querySelector(".arrow-last");
+const arrowPrev = document.querySelector(".arrow-prev");
+const arrowNext = document.querySelector(".arrow-next");
+const arrowIndex = document.querySelector(".arrow-index");
+
+let id = 1,
+  idFirst = 1,
+  idLast = 6;
+
+// permutations of an array
+let pet = [0, 1, 2, 3, 4, 5, 6, 7];
+function permutations(arr) {
+  return arr.length === 1
+    ? arr
+    : arr.reduce((acc, cv, index) => {
+        let remaining = [...arr];
+        remaining.splice(index, 1);
+        return acc.concat(permutations(remaining).map((a) => [].concat(cv, a)));
+      }, []);
+}
+// get six random arrays
+function randomArray() {
+  return permutations(pet)[Math.floor(Math.random() * 40320)];
+}
+
+arrowIndex.textContent = idFirst;
+
+arrowFirst.addEventListener("click", () => {
+  if (id == idFirst) {
+    return;
+  } else {
+    id = idFirst;
+    arrowIndex.textContent = id;
+    cards.innerHTML = "";
+    getData(randomArray());
+  }
+});
+arrowLast.addEventListener("click", () => {
+  if (id == idLast) {
+    return;
+  } else {
+    id = idLast;
+    arrowIndex.textContent = id;
+    cards.innerHTML = "";
+    getData(randomArray());
+  }
+});
+
+arrowPrev.addEventListener("click", () => {
+  if (id === idFirst) return;
+  prevBtn();
+});
+
+arrowNext.addEventListener("click", () => {
+  if (id === idLast) return;
+  nextBtn();
+});
+
+function prevBtn() {
+  cards.innerHTML = "";
+  id--;
+  arrowIndex.textContent = id;
+  getData(randomArray());
+}
+function nextBtn() {
+  cards.innerHTML = "";
+  id++;
+  arrowIndex.textContent = id;
+  getData(randomArray());
+}
+
 // get Data
 const cards = document.querySelector(".cards");
 const modal = document.querySelector(".modal");
 
-function getData() {
-  petData.forEach((item) => {
-    cards.innerHTML += `
-      <div class="card">
-                  <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                    class="card--img"
-                  />
-                  <h3>${item.name}</h3>
-                  <button class="card--btn-light open-modal" onclick="openModal(${item.id})">Learn more</button>
-          </div> 
-      
-      `;
+function getData(arr) {
+  arr.forEach((index) => {
+    petData.forEach((item) => {
+      if (index === item.id) {
+        cards.innerHTML += `
+          <div class="card">
+                      <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                        class="card--img"
+                      />
+                      <h3>${item.name}</h3>
+                      <button class="card--btn-light open-modal" onclick="openModal(${item.id})">Learn more</button>
+              </div>
+    
+          `;
+      }
+    });
   });
 }
 
@@ -63,88 +141,4 @@ window.onclick = (e) => {
   }
 };
 
-// async function getData() {
-//   const response = await fetch("./modals/modal.json");
-//   const data = await response.json();
-//   console.log(data);
-//   data
-//     .map((item) => {
-//       cards.innerHTML += `
-//            <div class="card slide">
-//             <img
-//               src="${item.image}"
-//               alt="${item.name}"
-//               class="card--img"
-//             />
-//             <h3>${item.name}</h3>
-//             <button class="card--btn-light open-modal">Learn more</button>
-//             </div>
-//             <div class="modal">
-//             <div class="modal-content">
-//                 <div class="modal--img">
-//                   <img src="${item.image}" alt="${item.name}" />
-//                 </div>
-//                 <div class="modal-desc">
-//                   <h3>${item.name}</h3>
-//                   <h4>${item.type}</h4>
-//                   <p>
-//                     ${item.desc}
-//                   </p>
-//                   <p><strong>Age: </strong> ${item.age} months</p>
-//                   <p><strong>Inoculations: </strong>none</p>
-//                   <p><strong>Diseases: </strong> none</p>
-//                   <p><strong>Parasites: </strong> none</p>
-//                   </div>
-//                   <div class="close-modal">✕</div>
-//               </div>
-//             </div>
-
-//     `;
-//     })
-//     .join("");
-
-//   // ---------------modal
-//   // works but only show last item
-//   const modal = cards.querySelectorAll(".modal");
-
-//   modal.forEach((item) => {
-// console.log(item);
-
-//     cards.addEventListener("click", (e) => {
-//       if (e.target.classList.contains("open-modal"))
-//         item.style.display = "flex";
-
-//       if (e.target.classList.contains("close-modal")) {
-//         item.style.display = "none";
-//       }
-
-//       window.addEventListener("click", (e) => {
-//         if (e.target === modal) {
-//           item.style.display = "none";
-//         }
-//       });
-//     });
-//   });
-
-// ---------works but only show first item
-// cards.addEventListener("click", function (e) {
-
-//   if (e.target.classList.contains("open-modal")) {
-//      const modal = cards.querySelector(".modal");
-//      const closeModal = cards.querySelector(".close-modal");
-//     //  show the modal
-//     modal.style.display = "flex";
-//     // when click on (x), close the modal
-//     closeModal.onclick = function () {
-//       modal.style.display = "none";
-//     };
-//     // when click outside the modal, close it
-//     window.onclick = function (event) {
-//       if (event.target === modal) {
-//         modal.style.display = "none";
-//       }
-//     };
-//   }
-// })
-
-getData();
+getData(randomArray());

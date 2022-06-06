@@ -11,19 +11,19 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.classList.toggle("active");
 });
 
-// get Data
-
 // get random
 
 let pet = [];
 
 function getRandom(min, max, num) {
   while (pet.length < num) {
-    const r = Math.floor(Math.random() * (max - min)) + min;
+    let r = Math.floor(Math.random() * (max - min)) + min;
     if (pet.indexOf(r) === -1) pet.push(r);
   }
   return pet;
 }
+
+// generate array based on window width
 function responsive(min, max) {
   if (window.matchMedia("(min-width: 1280px)").matches) {
     return getRandom(min, max, 3);
@@ -40,21 +40,23 @@ console.log(pet);
 
 getData();
 
+// get next slides
 next.addEventListener("click", () => {
   cards.innerHTML = "";
 
   for (let i = 0; i < pet.length; i++) {
-    let r = Math.floor(Math.random() * 7) + 1;
+    let r = Math.floor(Math.random() * 7);
     if (pet.indexOf(r) === -1 && pet[i] !== r) pet[i] = r;
   }
   console.log(pet);
   getData();
 });
+// get previous slides
 prev.addEventListener("click", () => {
   cards.innerHTML = "";
 
   for (let i = 0; i < pet.length; i++) {
-    let r = Math.floor(Math.random() * 7) + 1;
+    let r = Math.floor(Math.random() * 7);
     if (pet.indexOf(r) === -1 && r != pet[i]) pet[i] = r;
   }
   console.log(pet);
