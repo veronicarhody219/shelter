@@ -33,6 +33,7 @@ function randomArray() {
   return permutations(pet)[Math.floor(Math.random() * 40320)];
 }
 
+// ----------------pagination
 arrowIndex.textContent = idFirst;
 
 arrowFirst.addEventListener("click", () => {
@@ -44,8 +45,10 @@ arrowFirst.addEventListener("click", () => {
     cards.innerHTML = "";
     getData(randomArray());
   }
+  changeStyle();
 });
 arrowLast.addEventListener("click", () => {
+  changeStyle();
   if (id == idLast) {
     return;
   } else {
@@ -57,12 +60,18 @@ arrowLast.addEventListener("click", () => {
 });
 
 arrowPrev.addEventListener("click", () => {
-  if (id === idFirst) return;
+  changeStyle();
+  if (id === idFirst) {
+    return;
+  }
   prevBtn();
 });
 
 arrowNext.addEventListener("click", () => {
-  if (id === idLast) return;
+  changeStyle();
+  if (id === idLast) {
+    return;
+  }
   nextBtn();
 });
 
@@ -79,7 +88,23 @@ function nextBtn() {
   getData(randomArray());
 }
 
-// get Data
+function changeStyle() {
+  if (id === idFirst) {
+    arrowFirst.classList.add("disabled");
+    arrowPrev.classList.add("disabled");
+  } else {
+    arrowFirst.classList.remove("disabled");
+    arrowPrev.classList.remove("disabled");
+  }
+  if (id === idLast) {
+    arrowNext.classList.add("disabled");
+    arrowLast.classList.add("disabled");
+  } else {
+    arrowNext.classList.remove("disabled");
+    arrowLast.classList.remove("disabled");
+  }
+}
+// -------------------------get Data
 const cards = document.querySelector(".cards");
 const modal = document.querySelector(".modal");
 

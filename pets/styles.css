@@ -170,9 +170,12 @@ button:focus {
   margin: auto 0.5em;
 }
 
-.arrow.disabled {
-  border: 2px solid var(--clor-dark-m);
-  color: var(--clor-dark-m);
+.arrow-first.disabled,
+.arrow-prev.disabled,
+.arrow-next.disabled,
+.arrow-last.disabled {
+  border: 2px solid var(--clr-dark);
+  color: var(--clr-dark);
   cursor: not-allowed;
   pointer-events: none;
 }
