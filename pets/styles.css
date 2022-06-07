@@ -396,7 +396,7 @@ button:disabled,
 @media screen and (max-width: 768px) {
   .modal-content {
     width: 15rem;
-    min-height: 26.3125rem;
+    min-height: 29rem;
     /* max-width: 70%; */
   }
   .modal--img {
@@ -406,6 +406,6 @@ button:disabled,
 @media screen and (max-width: 320px) {
   .modal-content {
     width: 13.75rem;
-    min-height: 28.0625rem;
+    min-height: 30rem;
   }
 }

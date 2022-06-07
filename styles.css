@@ -558,7 +558,7 @@ button:focus {
 @media screen and (max-width: 768px) {
   .modal-content {
     width: 15rem;
-    height: 26.3125rem;
+    height: 29rem;
     /* max-width: 70%; */
   }
   .modal--img {
@@ -568,6 +568,6 @@ button:focus {
 @media screen and (max-width: 320px) {
   .modal-content{
     width: 13.75rem;
-    height: 28.0625rem;
+    height: 30rem;
   }
 }
