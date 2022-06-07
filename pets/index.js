@@ -19,6 +19,7 @@ let id = 1,
 
 // permutations of an array
 let pet = [0, 1, 2, 3, 4, 5, 6, 7];
+
 function permutations(arr) {
   return arr.length === 1
     ? arr
@@ -29,8 +30,23 @@ function permutations(arr) {
       }, []);
 }
 // get six random arrays
-function randomArray() {
+function randomArray(pet) {
   return permutations(pet)[Math.floor(Math.random() * 40320)];
+}
+
+// generate array based on window width
+function responsive() {
+  if (window.matchMedia("(min-width: 1280px)").matches) {
+    return randomArray(pet);
+  } else if (
+    window.matchMedia("(max-width: 1280px) and (min-width: 769px").matches
+  ) {
+    idLast = 8;
+    return randomArray(pet).splice(2);
+  } else if (window.matchMedia("(max-width: 768px)").matches) {
+    idLast = 16;
+    return randomArray(pet).splice(5);
+  }
 }
 
 // ----------------pagination
@@ -43,7 +59,7 @@ arrowFirst.addEventListener("click", () => {
     id = idFirst;
     arrowIndex.textContent = id;
     cards.innerHTML = "";
-    getData(randomArray());
+    getData(responsive());
   }
   changeStyle();
 });
@@ -54,7 +70,7 @@ arrowLast.addEventListener("click", () => {
     id = idLast;
     arrowIndex.textContent = id;
     cards.innerHTML = "";
-    getData(randomArray());
+    getData(responsive());
   }
   changeStyle();
 });
@@ -79,13 +95,13 @@ function prevBtn() {
   cards.innerHTML = "";
   id--;
   arrowIndex.textContent = id;
-  getData(randomArray());
+  getData(responsive());
 }
 function nextBtn() {
   cards.innerHTML = "";
   id++;
   arrowIndex.textContent = id;
-  getData(randomArray());
+  getData(responsive());
 }
 
 function changeStyle() {
@@ -166,4 +182,4 @@ window.onclick = (e) => {
   }
 };
 
-getData(randomArray());
+getData(responsive());
